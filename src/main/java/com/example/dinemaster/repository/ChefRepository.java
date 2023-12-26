@@ -1,9 +1,18 @@
-/*
- *
- * You can use the following import statements
- * 
- * import java.util.ArrayList;
- * 
- */
+package com.example.dinemaster.repository;
 
-// Write your code here
+import java.util.ArrayList;
+import com.example.dinemaster.model.*;
+
+public interface ChefRepository {
+    ArrayList<Chef> getChefs();
+
+    Chef getChefById(int id);
+
+    Chef addChef(Chef chef);
+
+    Chef updateChef(int id, Chef chef);
+
+    void deleteChef(int id);
+
+    Restaurant getChefRestaurant(int id);
+}
