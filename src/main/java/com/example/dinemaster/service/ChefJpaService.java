@@ -83,4 +83,16 @@ public class ChefJpaService implements ChefRepository {
         throw new ResponseStatusException(HttpStatus.NO_CONTENT);
     }
 
+	@Override
+	public Restaurant getChefRestaurant(int id) {
+		try {
+            Chef chef = chefJpaRepository.findById(id).get();
+            Restaurant restaurant = restaurant.getRestaurant();
+            return restaurant;
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+	}
+
 }
