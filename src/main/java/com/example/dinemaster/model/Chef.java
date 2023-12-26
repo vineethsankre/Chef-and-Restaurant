@@ -49,6 +49,13 @@ public class Chef {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    public String getExpertise() {
+        return expertise;
+    }
+
+    public void setExpertise(String expertise) {
+        this.expertise = expertise;
+    }
 
     public int getExperienceYears() {
         return experienceYears;
