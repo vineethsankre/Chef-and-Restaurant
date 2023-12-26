@@ -16,7 +16,7 @@ public class ChefJpaService implements ChefRepository {
     private ChefJpaRepository chefJpaRepository;
 
     @Autowired
-    private RestaurantJpaRepository restaurantJpaRespository;
+    private RestaurantJpaRepository restaurantJpaRepository;
 
     @Override
     public ArrayList<Chef> getChefs() {
@@ -87,7 +87,7 @@ public class ChefJpaService implements ChefRepository {
 	public Restaurant getChefRestaurant(int id) {
 		try {
             Chef chef = chefJpaRepository.findById(id).get();
-            Restaurant restaurant = restaurant.getRestaurant();
+            Restaurant restaurant = chef.getRestaurant();
             return restaurant;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
